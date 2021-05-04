@@ -14,9 +14,12 @@ class PostCardLoginCoordinator {
         self.navigationController = navigationController
     }
     func start() {
-        let viewModel = PostCardLoginViewModel(coordinator: self)
+        let viewModel = PostCardLoginViewModel(coordinator: self, loginUseCase: LoginUseCaseImplementation())
         let vc = PostCardLoginViewController(viewModel: viewModel)
         self.navigationController.pushViewController(vc, animated: true)
+    }
+    func navigateToMainScreen() {
+        PostCardMainCoordinator(navigationContoller: navigationController).start()
     }
     
 }
