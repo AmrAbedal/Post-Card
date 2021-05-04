@@ -12,4 +12,8 @@ class PostCardLoginViewModel {
     init(coordinator: PostCardLoginCoordinator) {
         self.coordinator = coordinator
     }
+    func signInButtonTapped() {
+        
+        
+    }
 }
