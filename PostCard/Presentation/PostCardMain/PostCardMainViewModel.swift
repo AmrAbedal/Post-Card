@@ -12,4 +12,7 @@ class PostCardMainViewModel {
     init(coordinator: PostCardMainCoordinator) {
         self.coordinator = coordinator
     }
+    func createCardButtonTapped() {
+        coordinator.openCreateCard()
+    }
 }

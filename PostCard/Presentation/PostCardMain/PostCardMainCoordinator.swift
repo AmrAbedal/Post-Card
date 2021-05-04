@@ -18,4 +18,7 @@ class PostCardMainCoordinator {
         let vc = PostCardMainViewController(viewModel: viewmodel)
         navigationContoller.pushViewController(vc, animated: true)
     }
+    func openCreateCard() {
+        CreatePostCardCoordinator.init(presentingViewController: navigationContoller).start()
+    }
 }

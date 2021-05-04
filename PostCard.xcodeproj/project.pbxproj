@@ -22,6 +22,9 @@
 		18581F2C2641D46E00D6DCAF /* SiginInDataSourceImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18581F2B2641D46E00D6DCAF /* SiginInDataSourceImplementation.swift */; };
 		18581F312641D6F600D6DCAF /* SignInResponce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18581F302641D6F600D6DCAF /* SignInResponce.swift */; };
 		18581F362641D90200D6DCAF /* LoginEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18581F352641D90200D6DCAF /* LoginEndPoint.swift */; };
+		18581F422641E26400D6DCAF /* CreatePostCardTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18581F412641E26400D6DCAF /* CreatePostCardTabBarViewController.swift */; };
+		18581F4A2641E3C600D6DCAF /* CreatePostCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18581F492641E3C600D6DCAF /* CreatePostCardViewModel.swift */; };
+		18581F4F2641E3D500D6DCAF /* CreatePostCardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18581F4E2641E3D500D6DCAF /* CreatePostCardCoordinator.swift */; };
 		18C35FF62641BCEC008809DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C35FF52641BCEC008809DA /* AppDelegate.swift */; };
 		18C35FF82641BCEC008809DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C35FF72641BCEC008809DA /* SceneDelegate.swift */; };
 		18C35FFF2641BCED008809DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18C35FFE2641BCED008809DA /* Assets.xcassets */; };
@@ -67,6 +70,9 @@
 		18581F2B2641D46E00D6DCAF /* SiginInDataSourceImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiginInDataSourceImplementation.swift; sourceTree = "<group>"; };
 		18581F302641D6F600D6DCAF /* SignInResponce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResponce.swift; sourceTree = "<group>"; };
 		18581F352641D90200D6DCAF /* LoginEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEndPoint.swift; sourceTree = "<group>"; };
+		18581F412641E26400D6DCAF /* CreatePostCardTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostCardTabBarViewController.swift; sourceTree = "<group>"; };
+		18581F492641E3C600D6DCAF /* CreatePostCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostCardViewModel.swift; sourceTree = "<group>"; };
+		18581F4E2641E3D500D6DCAF /* CreatePostCardCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostCardCoordinator.swift; sourceTree = "<group>"; };
 		18C35FF22641BCEC008809DA /* PostCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PostCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C35FF52641BCEC008809DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18C35FF72641BCEC008809DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +126,7 @@
 		18581EB52641BF4D00D6DCAF /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				18581F402641E1F700D6DCAF /* postCardCreation */,
 				18581ED62641C40B00D6DCAF /* PostCardLogin */,
 				18581F1E2641D30E00D6DCAF /* PostCardMain */,
 			);
@@ -190,6 +197,16 @@
 				18581F2B2641D46E00D6DCAF /* SiginInDataSourceImplementation.swift */,
 			);
 			path = frameworks;
+			sourceTree = "<group>";
+		};
+		18581F402641E1F700D6DCAF /* postCardCreation */ = {
+			isa = PBXGroup;
+			children = (
+				18581F412641E26400D6DCAF /* CreatePostCardTabBarViewController.swift */,
+				18581F492641E3C600D6DCAF /* CreatePostCardViewModel.swift */,
+				18581F4E2641E3D500D6DCAF /* CreatePostCardCoordinator.swift */,
+			);
+			path = postCardCreation;
 			sourceTree = "<group>";
 		};
 		18C35FE92641BCEC008809DA = {
@@ -512,14 +529,17 @@
 			files = (
 				18581ECD2641C3B100D6DCAF /* PostCardLoginViewModel.swift in Sources */,
 				18581EEA2641CBED00D6DCAF /* SignInViewModel.swift in Sources */,
+				18581F422641E26400D6DCAF /* CreatePostCardTabBarViewController.swift in Sources */,
 				18581F312641D6F600D6DCAF /* SignInResponce.swift in Sources */,
 				18581ED22641C3DD00D6DCAF /* PostCardLoginCoordinator.swift in Sources */,
 				18581EF72641CCD200D6DCAF /* LoginUseCaseImplementation.swift in Sources */,
 				18581F1A2641D03800D6DCAF /* PostCardMainCoordinator.swift in Sources */,
 				18581F362641D90200D6DCAF /* LoginEndPoint.swift in Sources */,
+				18581F4A2641E3C600D6DCAF /* CreatePostCardViewModel.swift in Sources */,
 				18581F092641CFB400D6DCAF /* PostCardMainViewController.swift in Sources */,
 				18C35FF62641BCEC008809DA /* AppDelegate.swift in Sources */,
 				18581EB82641BF8700D6DCAF /* PostCardLoginViewController.swift in Sources */,
+				18581F4F2641E3D500D6DCAF /* CreatePostCardCoordinator.swift in Sources */,
 				18581F242641D45300D6DCAF /* SignInDataSource.swift in Sources */,
 				18C35FF82641BCEC008809DA /* SceneDelegate.swift in Sources */,
 				18581EDF2641CB2400D6DCAF /* LoginUseCase.swift in Sources */,
