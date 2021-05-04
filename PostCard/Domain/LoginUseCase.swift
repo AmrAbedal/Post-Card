@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol LoginUseCase {
-    func login(email: String,password: String) -> Single<Result<SignInViewModel,Error>>
+    func login(email: String,password: String,dataSource: SignInDataSource) -> Single<Result<SignInViewModel,Error>>
 }

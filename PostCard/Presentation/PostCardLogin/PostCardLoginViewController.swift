@@ -29,7 +29,7 @@ class PostCardLoginViewController: UIViewController {
     }
 
     @IBAction func signInButtonTapped(_ sender: UIButton) {
-        viewModel.signInButtonTapped()
+        viewModel.signInButtonTapped(email: emailTextField.text, password: passwordTextField.text)
     }
     
 }

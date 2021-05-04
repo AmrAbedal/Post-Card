@@ -14,7 +14,7 @@ class PostCardLoginCoordinator {
         self.navigationController = navigationController
     }
     func start() {
-        let viewModel = PostCardLoginViewModel(coordinator: self, loginUseCase: LoginUseCaseImplementation())
+        let viewModel = PostCardLoginViewModel(coordinator: self, loginUseCase: LoginUseCaseImplementation(), dataSource: SiginInDataSourceImplementation())
         let vc = PostCardLoginViewController(viewModel: viewModel)
         self.navigationController.pushViewController(vc, animated: true)
     }
