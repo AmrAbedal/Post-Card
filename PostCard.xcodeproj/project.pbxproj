@@ -3,14 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18581EB82641BF8700D6DCAF /* PosCardLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18581EB62641BF8700D6DCAF /* PosCardLoginViewController.swift */; };
+		18581EB92641BF8700D6DCAF /* PosCardLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18581EB72641BF8700D6DCAF /* PosCardLoginViewController.xib */; };
 		18C35FF62641BCEC008809DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C35FF52641BCEC008809DA /* AppDelegate.swift */; };
 		18C35FF82641BCEC008809DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C35FF72641BCEC008809DA /* SceneDelegate.swift */; };
-		18C35FFA2641BCEC008809DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C35FF92641BCEC008809DA /* ViewController.swift */; };
-		18C35FFD2641BCEC008809DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18C35FFB2641BCEC008809DA /* Main.storyboard */; };
 		18C35FFF2641BCED008809DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18C35FFE2641BCED008809DA /* Assets.xcassets */; };
 		18C360022641BCED008809DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18C360002641BCED008809DA /* LaunchScreen.storyboard */; };
 		18C3600D2641BCED008809DA /* PostCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3600C2641BCED008809DA /* PostCardTests.swift */; };
@@ -39,11 +39,11 @@
 
 /* Begin PBXFileReference section */
 		0958163DE7C45D52BE6C31DE /* Pods-PostCard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PostCard.debug.xcconfig"; path = "Target Support Files/Pods-PostCard/Pods-PostCard.debug.xcconfig"; sourceTree = "<group>"; };
+		18581EB62641BF8700D6DCAF /* PosCardLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosCardLoginViewController.swift; sourceTree = "<group>"; };
+		18581EB72641BF8700D6DCAF /* PosCardLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PosCardLoginViewController.xib; sourceTree = "<group>"; };
 		18C35FF22641BCEC008809DA /* PostCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PostCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C35FF52641BCEC008809DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18C35FF72641BCEC008809DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		18C35FF92641BCEC008809DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		18C35FFC2641BCEC008809DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18C35FFE2641BCED008809DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18C360012641BCED008809DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18C360032641BCED008809DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -91,6 +91,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18581EB52641BF4D00D6DCAF /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				18581EB62641BF8700D6DCAF /* PosCardLoginViewController.swift */,
+				18581EB72641BF8700D6DCAF /* PosCardLoginViewController.xib */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		18C35FE92641BCEC008809DA = {
 			isa = PBXGroup;
 			children = (
@@ -117,9 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				18C35FF52641BCEC008809DA /* AppDelegate.swift */,
+				18581EB52641BF4D00D6DCAF /* Scenes */,
 				18C35FF72641BCEC008809DA /* SceneDelegate.swift */,
-				18C35FF92641BCEC008809DA /* ViewController.swift */,
-				18C35FFB2641BCEC008809DA /* Main.storyboard */,
 				18C35FFE2641BCED008809DA /* Assets.xcassets */,
 				18C360002641BCED008809DA /* LaunchScreen.storyboard */,
 				18C360032641BCED008809DA /* Info.plist */,
@@ -155,7 +163,6 @@
 				4E156B287650203686DE78B2 /* Pods-PostCardTests.debug.xcconfig */,
 				5530FC02A6CDE76FE379F8D5 /* Pods-PostCardTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -279,7 +286,7 @@
 			files = (
 				18C360022641BCED008809DA /* LaunchScreen.storyboard in Resources */,
 				18C35FFF2641BCED008809DA /* Assets.xcassets in Resources */,
-				18C35FFD2641BCEC008809DA /* Main.storyboard in Resources */,
+				18581EB92641BF8700D6DCAF /* PosCardLoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,8 +414,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18C35FFA2641BCEC008809DA /* ViewController.swift in Sources */,
 				18C35FF62641BCEC008809DA /* AppDelegate.swift in Sources */,
+				18581EB82641BF8700D6DCAF /* PosCardLoginViewController.swift in Sources */,
 				18C35FF82641BCEC008809DA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,14 +452,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		18C35FFB2641BCEC008809DA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				18C35FFC2641BCEC008809DA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		18C360002641BCED008809DA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
