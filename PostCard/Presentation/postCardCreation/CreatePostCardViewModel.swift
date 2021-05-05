@@ -24,6 +24,22 @@ class CreatePostCardViewModel {
 }
 
 extension CreatePostCardViewModel: CreatePostCardDelegate {
+    func postCardStyle() -> PostCardStyle {
+        return style ?? .regular
+    }
+    
+    func postCardFrontText() -> String {
+        return frontText ?? ""
+    }
+    
+    func postCardBackText() -> String {
+        return backText ?? ""
+    }
+    
+    func postCardImage() -> UIImage {
+        return image ?? UIImage()
+    }
+    
     func isFoldable() -> Bool {
         return  style == PostCardStyle.foldable 
     }
