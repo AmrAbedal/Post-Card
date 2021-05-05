@@ -12,5 +12,14 @@ class CreatePostCardViewModel {
     init(coordinator: CreatePostCardCoordinator) {
         self.coordinator = coordinator
     }
+    
+    func setupTapBar() {
+        coordinator.setupTapBar(delegate: self)
+    }
+}
 
+extension CreatePostCardViewModel: CreatePostCardDelegate {
+    func didSelect(style: PostCardStyle) {
+        
+    }
 }
