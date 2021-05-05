@@ -13,7 +13,7 @@ class PostCard: Object {
     @objc dynamic var date = Date()
     @objc dynamic var frontText: String = ""
     @objc dynamic var backText: String = ""
-    var image: NSData? = nil
+    var image: Data? = nil
     @objc dynamic var type: String = ""
     
     override static func primaryKey() -> String? {

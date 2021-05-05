@@ -12,4 +12,5 @@ class PostCardSummaryViewModel {
     init(coordinator: PostCardSummaryCoordinator) {
         self.coordinator = coordinator
     }
+    
 }

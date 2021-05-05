@@ -16,6 +16,7 @@
 		18344D512643591600CAFB87 /* CardCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18344D4F2643591600CAFB87 /* CardCellTableViewCell.swift */; };
 		18344D522643591600CAFB87 /* CardCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18344D502643591600CAFB87 /* CardCellTableViewCell.xib */; };
 		18344D5B26435A4300CAFB87 /* ArchivesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18344D5A26435A4300CAFB87 /* ArchivesUseCase.swift */; };
+		18344D682643600900CAFB87 /* SavePostCardUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18344D672643600900CAFB87 /* SavePostCardUseCase.swift */; };
 		18581EB82641BF8700D6DCAF /* PostCardLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18581EB62641BF8700D6DCAF /* PostCardLoginViewController.swift */; };
 		18581EB92641BF8700D6DCAF /* PostCardLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18581EB72641BF8700D6DCAF /* PostCardLoginViewController.xib */; };
 		18581ECD2641C3B100D6DCAF /* PostCardLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18581ECC2641C3B100D6DCAF /* PostCardLoginViewModel.swift */; };
@@ -97,6 +98,7 @@
 		18344D4F2643591600CAFB87 /* CardCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCellTableViewCell.swift; sourceTree = "<group>"; };
 		18344D502643591600CAFB87 /* CardCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCellTableViewCell.xib; sourceTree = "<group>"; };
 		18344D5A26435A4300CAFB87 /* ArchivesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivesUseCase.swift; sourceTree = "<group>"; };
+		18344D672643600900CAFB87 /* SavePostCardUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePostCardUseCase.swift; sourceTree = "<group>"; };
 		18581EB62641BF8700D6DCAF /* PostCardLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCardLoginViewController.swift; sourceTree = "<group>"; };
 		18581EB72641BF8700D6DCAF /* PostCardLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCardLoginViewController.xib; sourceTree = "<group>"; };
 		18581ECC2641C3B100D6DCAF /* PostCardLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCardLoginViewModel.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				18581EF62641CCD200D6DCAF /* LoginUseCaseImplementation.swift */,
 				18344D4A264352AB00CAFB87 /* ArchivesCountUseCase.swift */,
 				18344D5A26435A4300CAFB87 /* ArchivesUseCase.swift */,
+				18344D672643600900CAFB87 /* SavePostCardUseCase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -729,6 +732,7 @@
 				18581F242641D45300D6DCAF /* SignInDataSource.swift in Sources */,
 				18C35FF82641BCEC008809DA /* SceneDelegate.swift in Sources */,
 				18ADC00A2642DA5A002E5D87 /* FrontTextFieldDelegate.swift in Sources */,
+				18344D682643600900CAFB87 /* SavePostCardUseCase.swift in Sources */,
 				18581EDF2641CB2400D6DCAF /* LoginUseCase.swift in Sources */,
 				18581F2C2641D46E00D6DCAF /* SiginInDataSourceImplementation.swift in Sources */,
 				18581F152641CFEF00D6DCAF /* PostCardMainViewModel.swift in Sources */,
