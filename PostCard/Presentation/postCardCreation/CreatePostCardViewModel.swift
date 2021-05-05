@@ -11,6 +11,8 @@ import UIKit
 class CreatePostCardViewModel {
     private var style: PostCardStyle?
     private var image: UIImage?
+    private var frontText: String?
+    private var backText: String?
     private let coordinator: CreatePostCardCoordinator
     init(coordinator: CreatePostCardCoordinator) {
         self.coordinator = coordinator
@@ -22,6 +24,15 @@ class CreatePostCardViewModel {
 }
 
 extension CreatePostCardViewModel: CreatePostCardDelegate {
+    func isFoldable() -> Bool {
+        return  style == PostCardStyle.foldable 
+    }
+    
+    func frontAndBackTextChanged(frontText: String, backText: String) {
+        self.backText = backText
+        self.frontText = frontText
+    }
+    
     func didChhoseImage(image: UIImage) {
         self.image = image
     }

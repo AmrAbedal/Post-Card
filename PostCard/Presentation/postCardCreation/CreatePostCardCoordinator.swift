@@ -21,6 +21,6 @@ class CreatePostCardCoordinator {
     func setupTapBar(tabBarController: UITabBarController, delegate: CreatePostCardDelegate) {
         PostCardStyleCoordinator.init(tabBarController: tabBarController, delegate: delegate).start()
         PostCardImageCoordinator.init(tabBarController: tabBarController, delegate: delegate).start()
-        
+        PostcardTextCoordinator.init(tabBarController: tabBarController, delegate: delegate, dataSource: delegate).start()
     }
 }
