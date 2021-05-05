@@ -27,6 +27,6 @@ class PostCardMainViewController: UIViewController {
     }
     
     @IBAction func archivesButtonTapped(_ sender: Any) {
-        
+        self.viewModel.openArchiveButtonTapped()
     }
 }

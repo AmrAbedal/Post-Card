@@ -21,4 +21,7 @@ class PostCardMainCoordinator {
     func openCreateCard() {
         CreatePostCardCoordinator.init(presentingViewController: navigationContoller).start()
     }
+    func openArchives()  {
+        ArchivesCoordinator.init(presentingViewController: navigationContoller).start()
+    }
 }

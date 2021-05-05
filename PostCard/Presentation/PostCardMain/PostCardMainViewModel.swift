@@ -15,4 +15,7 @@ class PostCardMainViewModel {
     func createCardButtonTapped() {
         coordinator.openCreateCard()
     }
+    func openArchiveButtonTapped() {
+        coordinator.openArchives()
+    }
 }
