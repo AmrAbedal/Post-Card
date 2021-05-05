@@ -22,17 +22,31 @@ class PostCard: Object {
 }
 
 class DataBaseManager {
-    let realm: Realm
+    let realm: Realm?
     static let shared: DataBaseManager = DataBaseManager()
     init() {
-        self.realm = try! Realm.init()
+        self.realm = try? Realm.init()
     }
-    func getPostCards() -> Results<PostCard> {
+    func getPostCards() throws ->  Results<PostCard>  {
+        guard let realm = realm else {
+            throw AppError.init()
+        }
         return realm.objects(PostCard.self)
     }
-    func saveCard(card: PostCard) {
-        try! realm.write({
-            realm.add(card)
-        })
+    func saveCard(card: PostCard) throws {
+        guard let realm = realm else {
+            throw AppError.init()
+        }
+        do {
+            try realm.write({
+                realm.add(card)
+            })
+        } catch{
+            throw AppError.init()
+            
+        }
+        
     }
 }
+
+

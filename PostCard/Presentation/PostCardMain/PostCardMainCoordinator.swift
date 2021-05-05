@@ -14,7 +14,7 @@ class PostCardMainCoordinator {
         self.navigationContoller = navigationContoller
     }
     func start() {
-        let viewmodel = PostCardMainViewModel(coordinator: self)
+        let viewmodel = PostCardMainViewModel(coordinator: self, archivesCountUseCase: ArchivesCountUseCaseImplementation())
         let vc = PostCardMainViewController(viewModel: viewmodel)
         navigationContoller.pushViewController(vc, animated: true)
     }
