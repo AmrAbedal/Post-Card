@@ -13,6 +13,9 @@
 		18344D4126434FDF00CAFB87 /* ArchivesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18344D4026434FDF00CAFB87 /* ArchivesViewModel.swift */; };
 		18344D462643501800CAFB87 /* ArchivesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18344D452643501800CAFB87 /* ArchivesCoordinator.swift */; };
 		18344D4B264352AB00CAFB87 /* ArchivesCountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18344D4A264352AB00CAFB87 /* ArchivesCountUseCase.swift */; };
+		18344D512643591600CAFB87 /* CardCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18344D4F2643591600CAFB87 /* CardCellTableViewCell.swift */; };
+		18344D522643591600CAFB87 /* CardCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18344D502643591600CAFB87 /* CardCellTableViewCell.xib */; };
+		18344D5B26435A4300CAFB87 /* ArchivesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18344D5A26435A4300CAFB87 /* ArchivesUseCase.swift */; };
 		18581EB82641BF8700D6DCAF /* PostCardLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18581EB62641BF8700D6DCAF /* PostCardLoginViewController.swift */; };
 		18581EB92641BF8700D6DCAF /* PostCardLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18581EB72641BF8700D6DCAF /* PostCardLoginViewController.xib */; };
 		18581ECD2641C3B100D6DCAF /* PostCardLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18581ECC2641C3B100D6DCAF /* PostCardLoginViewModel.swift */; };
@@ -91,6 +94,9 @@
 		18344D4026434FDF00CAFB87 /* ArchivesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivesViewModel.swift; sourceTree = "<group>"; };
 		18344D452643501800CAFB87 /* ArchivesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivesCoordinator.swift; sourceTree = "<group>"; };
 		18344D4A264352AB00CAFB87 /* ArchivesCountUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivesCountUseCase.swift; sourceTree = "<group>"; };
+		18344D4F2643591600CAFB87 /* CardCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCellTableViewCell.swift; sourceTree = "<group>"; };
+		18344D502643591600CAFB87 /* CardCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCellTableViewCell.xib; sourceTree = "<group>"; };
+		18344D5A26435A4300CAFB87 /* ArchivesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivesUseCase.swift; sourceTree = "<group>"; };
 		18581EB62641BF8700D6DCAF /* PostCardLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCardLoginViewController.swift; sourceTree = "<group>"; };
 		18581EB72641BF8700D6DCAF /* PostCardLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCardLoginViewController.xib; sourceTree = "<group>"; };
 		18581ECC2641C3B100D6DCAF /* PostCardLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCardLoginViewModel.swift; sourceTree = "<group>"; };
@@ -187,11 +193,21 @@
 			isa = PBXGroup;
 			children = (
 				18344D3926434FAF00CAFB87 /* ArchivesTableViewController.swift */,
+				18344D562643592100CAFB87 /* CardCellTableViewCell */,
 				18344D4026434FDF00CAFB87 /* ArchivesViewModel.swift */,
 				18344D452643501800CAFB87 /* ArchivesCoordinator.swift */,
 				18344D3A26434FAF00CAFB87 /* ArchivesTableViewController.xib */,
 			);
 			path = Archives;
+			sourceTree = "<group>";
+		};
+		18344D562643592100CAFB87 /* CardCellTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				18344D4F2643591600CAFB87 /* CardCellTableViewCell.swift */,
+				18344D502643591600CAFB87 /* CardCellTableViewCell.xib */,
+			);
+			path = CardCellTableViewCell;
 			sourceTree = "<group>";
 		};
 		18581EB52641BF4D00D6DCAF /* Presentation */ = {
@@ -222,6 +238,7 @@
 				18581EDE2641CB2400D6DCAF /* LoginUseCase.swift */,
 				18581EF62641CCD200D6DCAF /* LoginUseCaseImplementation.swift */,
 				18344D4A264352AB00CAFB87 /* ArchivesCountUseCase.swift */,
+				18344D5A26435A4300CAFB87 /* ArchivesUseCase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -540,6 +557,7 @@
 				18581F702642B4CE00D6DCAF /* PostCardImageViewController.xib in Resources */,
 				18ADBFF72642D66F002E5D87 /* PostCardSummaryViewController.xib in Resources */,
 				18581F5726428E5000D6DCAF /* PostCardStyleViewController.xib in Resources */,
+				18344D522643591600CAFB87 /* CardCellTableViewCell.xib in Resources */,
 				18344D3C26434FAF00CAFB87 /* ArchivesTableViewController.xib in Resources */,
 				18581EB92641BF8700D6DCAF /* PostCardLoginViewController.xib in Resources */,
 				18581F0A2641CFB400D6DCAF /* PostCardMainViewController.xib in Resources */,
@@ -672,10 +690,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				18ADC0172642DB09002E5D87 /* Contracts.swift in Sources */,
+				18344D512643591600CAFB87 /* CardCellTableViewCell.swift in Sources */,
 				18581F802642B4F700D6DCAF /* PostCardImageCoordinator.swift in Sources */,
 				18344D3B26434FAF00CAFB87 /* ArchivesTableViewController.swift in Sources */,
 				18344D462643501800CAFB87 /* ArchivesCoordinator.swift in Sources */,
 				18344D4126434FDF00CAFB87 /* ArchivesViewModel.swift in Sources */,
+				18344D5B26435A4300CAFB87 /* ArchivesUseCase.swift in Sources */,
 				18581F852642BA7200D6DCAF /* ImagePickerManager.swift in Sources */,
 				18344D3426434C9900CAFB87 /* PostCard.swift in Sources */,
 				18581F8C2642BDBF00D6DCAF /* PostcardTextViewContoller.swift in Sources */,

@@ -14,7 +14,7 @@ class ArchivesCoordinator {
         self.presentingViewController = presentingViewController
     }
     func start() {
-        let viewModel = ArchivesViewModel.init(coordinator: self)
+        let viewModel = ArchivesViewModel.init(coordinator: self, usecase: ArchivesUseCaseImplementation())
         let tabBarController = ArchivesTableViewController.init(viewModel: viewModel)
         self.presentingViewController.present(tabBarController, animated: true, completion: nil)
     }
