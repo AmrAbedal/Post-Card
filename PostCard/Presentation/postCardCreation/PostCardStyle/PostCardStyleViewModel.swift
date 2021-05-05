@@ -22,7 +22,7 @@ enum PostCardStyle {
 protocol PostCardStyleDelegate: AnyObject {
     func didSelect(style: PostCardStyle)
 }
-protocol CreatePostCardDelegate: PostCardStyleDelegate {}
+protocol CreatePostCardDelegate: PostCardStyleDelegate, PostCardImageDelegate {}
 
 class PostCardStyleViewModel {
    let styles: [PostCardStyle]
