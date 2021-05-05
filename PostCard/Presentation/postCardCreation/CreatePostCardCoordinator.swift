@@ -23,5 +23,6 @@ class CreatePostCardCoordinator {
         PostCardImageCoordinator.init(tabBarController: tabBarController, delegate: delegate).start()
         PostcardTextCoordinator.init(tabBarController: tabBarController, delegate: delegate, dataSource: delegate).start()
         PostCardViewCoordinator.init(tabBarController: tabBarController, delegate: delegate).start()
+        PostCardSummaryCoordinator.init(tabBarController: tabBarController, delegate: delegate).start()
     }
 }

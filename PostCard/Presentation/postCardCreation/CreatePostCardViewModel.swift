@@ -24,6 +24,14 @@ class CreatePostCardViewModel {
 }
 
 extension CreatePostCardViewModel: CreatePostCardDelegate {
+    func saveButtonTapped() {
+        // save to Realm 
+    }
+    
+    func postCardDiscription() -> String {
+        return style?.title ?? ""
+    }
+    
     func postCardStyle() -> PostCardStyle {
         return style ?? .regular
     }
