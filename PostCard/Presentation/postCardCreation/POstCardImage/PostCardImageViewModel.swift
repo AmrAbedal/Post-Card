@@ -8,10 +8,6 @@
 import Foundation
 import UIKit
 
-protocol PostCardImageDelegate: AnyObject {
-    func didChhoseImage(image: UIImage)
-}
-
 class PostCardImageViewModel {
     private weak var delegate: PostCardImageDelegate?
     private let coordinator: PostCardImageCoordinator

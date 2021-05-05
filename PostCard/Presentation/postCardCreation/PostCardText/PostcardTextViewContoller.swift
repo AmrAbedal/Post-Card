@@ -43,22 +43,3 @@ class PostcardTextViewContoller: UIViewController {
         viewModel.frontAndBackTextChanged(frontText: frontTextTextField.text, backText: backTextTextField.text)
     }
 }
-
-class FrontTextFieldDelegate: NSObject, UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard let text = textField.text else {
-            return false
-        }
-        return text.count + string.count - range.length <= 30
-    }
-}
-
-class BackTextFieldDelegate: NSObject, UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard let text = textField.text else {
-            return false
-        }
-        let newText = text.appending(string)
-        return newText.split(separator: " ").count <= 30
-    }
-}

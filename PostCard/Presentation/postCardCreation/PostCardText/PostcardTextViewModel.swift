@@ -6,12 +6,7 @@
 //
 
 import Foundation
-protocol PostcardTextDataSource: AnyObject {
-    func isFoldable() -> Bool
-}
-protocol PostcardTextDelegate: AnyObject {
-    func frontAndBackTextChanged(frontText: String, backText: String)
-}
+
 class PostcardTextViewModel {
     weak var delegate: PostcardTextDelegate?
     weak var dataSource: PostcardTextDataSource?

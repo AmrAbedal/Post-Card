@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+
 class PostCardStyleCoordinator {
     weak var tabBarController: UITabBarController?
     private weak var delegate: PostCardStyleDelegate?

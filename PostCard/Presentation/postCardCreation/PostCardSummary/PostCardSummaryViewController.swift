@@ -7,14 +7,6 @@
 
 import UIKit
 
-protocol PostCardSummaryViewControllerDelegate: AnyObject {
-    func saveButtonTapped()
-}
-protocol PostCardSummaryViewControllerDataSource: AnyObject {
-    func postCardDiscription() -> String
-}
-protocol PostCardSummaryViewControllerDataSourceAndDelegate:  PostCardSummaryViewControllerDelegate, PostCardSummaryViewControllerDataSource {}
-
 class PostCardSummaryViewController: UIViewController {
     
     

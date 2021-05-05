@@ -7,13 +7,6 @@
 
 import UIKit
 
-protocol PostCardPerviewViewControllerDataSource: AnyObject {
-    func postCardStyle() -> PostCardStyle
-    func postCardFrontText() -> String
-    func postCardBackText() -> String
-    func postCardImage() -> UIImage
-}
-
 class PostCardPerviewViewController: UIViewController {
     weak var dataSource: PostCardPerviewViewControllerDataSource?
     @IBOutlet weak var frontTextLabel: UILabel!

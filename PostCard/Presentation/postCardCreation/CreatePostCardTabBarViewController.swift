@@ -25,8 +25,6 @@ class CreatePostCardTabBarViewController: UITabBarController {
         self.viewModel.setupTapBar(tabBarController: self)
         
     }
-    
-    
     func setUpViewController(_ title: String, backgroundColor: UIColor) -> UIViewController {
         let vc = UIViewController()
         vc.view.backgroundColor = backgroundColor
