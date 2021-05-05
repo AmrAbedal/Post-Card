@@ -18,6 +18,6 @@ class PostCardStyleCoordinator {
         let viewModel = PostCardStyleViewModel.init(styles: [.foldable,.regular], coordinator: self, delegate: delegate)
         let vc = PostCardStyleViewController.init(viewmodel: viewModel)
         vc.tabBarItem.title = "Style"
-//        self.tabBarController.viewControllers?.append(vc)
+        self.tabBarController.addChild(vc1)
     }
 }

@@ -19,17 +19,9 @@ class CreatePostCardTabBarViewController: UITabBarController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.setupTapBar()
-        // Do any additional setup after loading the view.
-//        let vc1 = setUpViewController("First", backgroundColor: UIColor.orange)
-//        let vc2 = setUpViewController("Second", backgroundColor: UIColor.purple)
-//        let vc3 = setUpViewController("Third", backgroundColor: UIColor.red)
-//        let vc4 = setUpViewController("Fourth", backgroundColor: UIColor.green)
-//        let vc5 = setUpViewController("Fifth", backgroundColor: UIColor.blue)
-//        
-//        // Set up the Tab Bar Controller
-//        viewControllers = [vc1, vc2, vc3, vc4, vc5]
-        
+        DispatchQueue.main.async {
+            self.viewModel.setupTapBar()
+        }
     }
     
     
