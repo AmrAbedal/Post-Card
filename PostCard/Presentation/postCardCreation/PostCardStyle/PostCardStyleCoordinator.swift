@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 class PostCardStyleCoordinator {
-    let tabBarController: UITabBarController
+    weak var tabBarController: UITabBarController?
     private weak var delegate: PostCardStyleDelegate?
     init(tabBarController: UITabBarController, delegate: PostCardStyleDelegate?) {
         self.tabBarController = tabBarController
@@ -18,6 +18,6 @@ class PostCardStyleCoordinator {
         let viewModel = PostCardStyleViewModel.init(styles: [.foldable,.regular], coordinator: self, delegate: delegate)
         let vc = PostCardStyleViewController.init(viewmodel: viewModel)
         vc.tabBarItem.title = "Style"
-        self.tabBarController.addChild(vc1)
+        self.tabBarController?.addChild(vc)
     }
 }

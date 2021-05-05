@@ -6,20 +6,21 @@
 //
 
 import Foundation
-
+import UIKit
 class CreatePostCardViewModel {
+    private var style: PostCardStyle?
     private let coordinator: CreatePostCardCoordinator
     init(coordinator: CreatePostCardCoordinator) {
         self.coordinator = coordinator
     }
     
-    func setupTapBar() {
-        coordinator.setupTapBar(delegate: self)
+    func setupTapBar(tabBarController: UITabBarController) {
+        coordinator.setupTapBar(tabBarController: tabBarController, delegate: self)
     }
 }
 
 extension CreatePostCardViewModel: CreatePostCardDelegate {
     func didSelect(style: PostCardStyle) {
-        
+        self.style = style
     }
 }

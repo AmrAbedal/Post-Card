@@ -8,6 +8,9 @@
 import UIKit
 
 class CreatePostCardTabBarViewController: UITabBarController {
+    deinit {
+        print("CreatePostCardTabBarViewController deaalocated ")
+    }
     private let viewModel: CreatePostCardViewModel
     init(viewModel: CreatePostCardViewModel) {
         self.viewModel = viewModel
@@ -19,9 +22,8 @@ class CreatePostCardTabBarViewController: UITabBarController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.main.async {
-            self.viewModel.setupTapBar()
-        }
+        self.viewModel.setupTapBar(tabBarController: self)
+        
     }
     
     

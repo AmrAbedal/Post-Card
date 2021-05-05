@@ -10,18 +10,15 @@ import UIKit
 
 class CreatePostCardCoordinator {
    private let presentingViewController: UIViewController
-    lazy var tabBarController: UITabBarController = {
-        let viewModel = CreatePostCardViewModel.init(coordinator: self)
-        let tabBarController = CreatePostCardTabBarViewController.init(viewModel: viewModel)
-        return tabBarController
-    }()
     init(presentingViewController: UIViewController) {
         self.presentingViewController = presentingViewController
     }
     func start() {
+        let viewModel = CreatePostCardViewModel.init(coordinator: self)
+        let tabBarController = CreatePostCardTabBarViewController.init(viewModel: viewModel)
         self.presentingViewController.present(tabBarController, animated: true, completion: nil)
     }
-    func setupTapBar(delegate: CreatePostCardDelegate) {
+    func setupTapBar(tabBarController: UITabBarController, delegate: CreatePostCardDelegate) {
         PostCardStyleCoordinator.init(tabBarController: tabBarController, delegate: delegate).start()
         
     }
