@@ -11,14 +11,16 @@ import Foundation
 import Foundation
 import RxSwift
 import RealmSwift
+import UIKit
 
 protocol SavePostCardUseCase {
-    func saveCard(card: PostCard) -> Single<Result<String ,Error>>
+    func saveCard(image: UIImage, card: PostCard) -> Single<Result<String ,Error>>
 }
 
 class SavePostCardUseCaseImplementation: SavePostCardUseCase {
-    func saveCard(card: PostCard) -> Single<Result<String ,Error>> {
+    func saveCard(image: UIImage, card: PostCard) -> Single<Result<String ,Error>> {
         do {
+            card.image = try DataBaseManager.shared.saveImage(image: image)
              try DataBaseManager.shared.saveCard(card: card)
             return .just(.success("Saved"))
         } catch {

@@ -11,7 +11,7 @@ struct CardCellViewModel {
     let frontText: String
     let typeText: String
     init(card: PostCard?) {
-        image  =  UIImage.init(data: card?.image as! Data ?? Data())
+        image  = DataBaseManager.shared.loadImageFromDiskWith(fileName: card?.image ?? "")
         frontText = card?.frontText ?? ""
         typeText = PostCardStyle(rawValue: card?.type ?? "")?.title ?? PostCardStyle.regular.title
     }

@@ -13,7 +13,7 @@ class PostCard: Object {
     @objc dynamic var date = Date()
     @objc dynamic var frontText: String = ""
     @objc dynamic var backText: String = ""
-    var image: NSData? = nil
+    @objc dynamic var image: String = ""
     @objc dynamic var type: String = ""
     
     override static func primaryKey() -> String? {
@@ -47,6 +47,41 @@ class DataBaseManager {
         }
         
     }
+    func saveImage( image: UIImage) throws ->  String  {
+        
+        guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+            throw AppError()
+        }
+        
+        let fileName = UUID().uuidString
+        let fileURL = documentsDirectory.appendingPathComponent(fileName)
+        guard let data = image.jpegData(compressionQuality: 1) else {
+            throw AppError()
+        }
+        do {
+            try data.write(to: fileURL)
+            return fileName
+        } catch  {
+            throw AppError()
+        }
+    }
+    
+    func loadImageFromDiskWith(fileName: String) -> UIImage? {
+        
+        let documentDirectory = FileManager.SearchPathDirectory.documentDirectory
+        
+        let userDomainMask = FileManager.SearchPathDomainMask.userDomainMask
+        let paths = NSSearchPathForDirectoriesInDomains(documentDirectory, userDomainMask, true)
+        
+        if let dirPath = paths.first {
+            let imageUrl = URL(fileURLWithPath: dirPath).appendingPathComponent(fileName)
+            let image = UIImage(contentsOfFile: imageUrl.path)
+            return image
+            
+        }
+        return nil
+    }
 }
+
 
 
