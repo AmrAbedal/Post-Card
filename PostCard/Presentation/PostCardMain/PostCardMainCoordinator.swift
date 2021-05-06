@@ -18,10 +18,10 @@ class PostCardMainCoordinator {
         let vc = PostCardMainViewController(viewModel: viewmodel)
         navigationContoller.pushViewController(vc, animated: true)
     }
-    func openCreateCard() {
-        CreatePostCardCoordinator.init(presentingViewController: navigationContoller).start()
+    func openCreateCard(delegate: CreateNewPostCardDelegate) {
+        CreatePostCardCoordinator.init(presentingViewController: navigationContoller, delegate: delegate).start()
     }
     func openArchives()  {
-        ArchivesCoordinator.init(presentingViewController: navigationContoller).start()
+        ArchivesCoordinator.init(navigationVontroller: navigationContoller).start()
     }
 }

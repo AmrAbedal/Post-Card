@@ -23,7 +23,7 @@ class PostCardMainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setSubscribers()
-        viewModel.viewDidLoad()
+        viewModel.loadArchiveCount()
         // Do any additional setup after loading the view.
     }
     private func setSubscribers() {

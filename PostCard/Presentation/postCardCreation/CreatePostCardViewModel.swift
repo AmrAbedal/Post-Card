@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import RxSwift
 
+
 class CreatePostCardViewModel {
     private let diposable = DisposeBag()
     private var style: PostCardStyle?

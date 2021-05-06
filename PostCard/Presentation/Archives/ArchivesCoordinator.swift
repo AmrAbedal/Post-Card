@@ -9,13 +9,13 @@ import Foundation
 import UIKit
 
 class ArchivesCoordinator {
-    private let presentingViewController: UIViewController
-    init(presentingViewController: UIViewController) {
-        self.presentingViewController = presentingViewController
+    private let navigationVontroller: UINavigationController
+    init(navigationVontroller: UINavigationController) {
+        self.navigationVontroller = navigationVontroller
     }
     func start() {
         let viewModel = ArchivesViewModel.init(coordinator: self, usecase: ArchivesUseCaseImplementation())
-        let tabBarController = ArchivesTableViewController.init(viewModel: viewModel)
-        self.presentingViewController.present(tabBarController, animated: true, completion: nil)
+        let archivesVC = ArchivesTableViewController.init(viewModel: viewModel)
+        self.navigationVontroller.pushViewController(archivesVC, animated: true)
     }
 }

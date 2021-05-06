@@ -9,9 +9,11 @@ import Foundation
 import UIKit
 
 class CreatePostCardCoordinator {
-   private let presentingViewController: UIViewController
-    init(presentingViewController: UIViewController) {
+    private weak var delegate: CreateNewPostCardDelegate?
+    private let presentingViewController: UIViewController
+    init(presentingViewController: UIViewController, delegate: CreateNewPostCardDelegate?) {
         self.presentingViewController = presentingViewController
+        self.delegate = delegate
     }
     
     func start() {
@@ -28,6 +30,7 @@ class CreatePostCardCoordinator {
         PostCardSummaryCoordinator.init(tabBarController: tabBarController, delegate: delegate).start()
     }
     func cardSaved() {
+        delegate?.newCardSavedSuccessfully()
         presentingViewController.dismiss(animated: true, completion: nil)
     }
     func showErrorToast() {

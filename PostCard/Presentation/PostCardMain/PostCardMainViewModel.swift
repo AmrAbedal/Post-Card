@@ -17,7 +17,7 @@ class PostCardMainViewModel {
         self.coordinator = coordinator
         self.archivesCountUseCase = archivesCountUseCase
     }
-    func viewDidLoad() {
+    func loadArchiveCount() {
         archivesCountUseCase.archivesCount()
             .subscribe(onSuccess: {
                 result in
@@ -27,9 +27,16 @@ class PostCardMainViewModel {
             }).disposed(by: dispsoable)
     }
     func createCardButtonTapped() {
-        coordinator.openCreateCard()
+        coordinator.openCreateCard(delegate: self)
     }
     func openArchiveButtonTapped() {
         coordinator.openArchives()
     }
+}
+
+extension PostCardMainViewModel : CreateNewPostCardDelegate {
+    func newCardSavedSuccessfully() {
+        loadArchiveCount()
+    }
+    
 }

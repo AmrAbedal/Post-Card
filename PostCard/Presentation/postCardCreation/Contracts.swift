@@ -40,5 +40,8 @@ protocol PostCardSummaryViewControllerDataSource: AnyObject {
 
 protocol PostCardSummaryViewControllerDataSourceAndDelegate:  PostCardSummaryViewControllerDelegate, PostCardSummaryViewControllerDataSource {}
 
+protocol CreateNewPostCardDelegate: AnyObject {
+    func newCardSavedSuccessfully()
+}
 
 protocol CreatePostCardDelegate: PostCardStyleDelegate, PostCardImageDelegate, PostcardTextDelegate, PostcardTextDataSource, PostCardPerviewViewControllerDataSource, PostCardSummaryViewControllerDataSourceAndDelegate {}
