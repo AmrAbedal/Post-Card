@@ -6,6 +6,7 @@ target 'PostCard' do
   use_frameworks!
 
   # Pods for PostCard
+  pod 'RealmSwift','10.7.4'
   pod 'RxSwift', '~> 5'
   pod 'Moya/RxSwift', '~> 14.0'
   target 'PostCardTests' do
