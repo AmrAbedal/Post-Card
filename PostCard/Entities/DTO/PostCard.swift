@@ -47,6 +47,19 @@ class DataBaseManager {
         }
         
     }
+    func deleteCard(card: PostCard) throws {
+        guard let realm = realm else {
+            throw AppError.init()
+        }
+        do {
+            try realm.write({
+                realm.delete(card)
+            })
+        } catch{
+            throw AppError.init()
+            
+        }
+    }
     func saveImage( image: UIImage) throws ->  String  {
         
         guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {

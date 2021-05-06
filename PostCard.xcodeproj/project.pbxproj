@@ -65,6 +65,7 @@
 		18C360022641BCED008809DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18C360002641BCED008809DA /* LaunchScreen.storyboard */; };
 		18C3600D2641BCED008809DA /* PostCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3600C2641BCED008809DA /* PostCardTests.swift */; };
 		18C360182641BCED008809DA /* PostCardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C360172641BCED008809DA /* PostCardUITests.swift */; };
+		18FD228226439CF100183C56 /* CardOptionAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FD228126439CF100183C56 /* CardOptionAlert.swift */; };
 		366808313C7B39BF96411FB2 /* Pods_PostCard_PostCardUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C0D01D01FDFA461A2D2D3F /* Pods_PostCard_PostCardUITests.framework */; };
 		C45E50502585C9E7F2672953 /* Pods_PostCardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FA3FEE6D7CEDFE3E227932C /* Pods_PostCardTests.framework */; };
 		DD7E572ECB8577E12D3E38D9 /* Pods_PostCard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC7CA1657BEF19C2F6383F6 /* Pods_PostCard.framework */; };
@@ -153,6 +154,7 @@
 		18C360132641BCED008809DA /* PostCardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PostCardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C360172641BCED008809DA /* PostCardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCardUITests.swift; sourceTree = "<group>"; };
 		18C360192641BCED008809DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18FD228126439CF100183C56 /* CardOptionAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardOptionAlert.swift; sourceTree = "<group>"; };
 		2FA3FEE6D7CEDFE3E227932C /* Pods_PostCardTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PostCardTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C0D01D01FDFA461A2D2D3F /* Pods_PostCard_PostCardUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PostCard_PostCardUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E156B287650203686DE78B2 /* Pods-PostCardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PostCardTests.debug.xcconfig"; path = "Target Support Files/Pods-PostCardTests/Pods-PostCardTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				18344D562643592100CAFB87 /* CardCellTableViewCell */,
 				18344D4026434FDF00CAFB87 /* ArchivesViewModel.swift */,
 				18344D452643501800CAFB87 /* ArchivesCoordinator.swift */,
+				18FD228126439CF100183C56 /* CardOptionAlert.swift */,
 				18344D3A26434FAF00CAFB87 /* ArchivesTableViewController.xib */,
 			);
 			path = Archives;
@@ -721,6 +724,7 @@
 				18581EF72641CCD200D6DCAF /* LoginUseCaseImplementation.swift in Sources */,
 				18581F7B2642B4E300D6DCAF /* PostCardImageViewModel.swift in Sources */,
 				18581F1A2641D03800D6DCAF /* PostCardMainCoordinator.swift in Sources */,
+				18FD228226439CF100183C56 /* CardOptionAlert.swift in Sources */,
 				18581F362641D90200D6DCAF /* LoginEndPoint.swift in Sources */,
 				18581F4A2641E3C600D6DCAF /* CreatePostCardViewModel.swift in Sources */,
 				18581F092641CFB400D6DCAF /* PostCardMainViewController.swift in Sources */,

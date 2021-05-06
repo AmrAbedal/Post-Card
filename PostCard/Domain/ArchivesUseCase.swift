@@ -11,9 +11,20 @@ import RealmSwift
 
 protocol ArchivesUseCase {
     func loadArchives() -> Single<Result<Results<PostCard> ,Error>>
+    func deleteCard(card: PostCard) -> Single<Result<String,Error>>
 }
 
 class ArchivesUseCaseImplementation: ArchivesUseCase {
+    func deleteCard(card: PostCard) -> Single<Result<String, Error>> {
+        do {
+             try DataBaseManager.shared.deleteCard(card: card)
+            return .just(.success("Deleted Successfully "))
+        } catch {
+            return .just(.failure(error))
+        }
+    }
+    
+  
     func loadArchives() -> Single<Result<Results<PostCard> ,Error>> {
         do {
             let archives = try DataBaseManager.shared.getPostCards().sorted(byKeyPath: "date",ascending: false)
