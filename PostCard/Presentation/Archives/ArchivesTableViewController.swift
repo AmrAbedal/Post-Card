@@ -66,7 +66,7 @@ class ArchivesTableViewController: UITableViewController {
         return archives?.count ?? 0
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 400
+        return 210
     }
     
     

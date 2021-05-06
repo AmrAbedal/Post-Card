@@ -38,5 +38,4 @@ extension PostCardMainViewModel : CreateNewPostCardDelegate {
     func newCardSavedSuccessfully() {
         loadArchiveCount()
     }
-    
 }

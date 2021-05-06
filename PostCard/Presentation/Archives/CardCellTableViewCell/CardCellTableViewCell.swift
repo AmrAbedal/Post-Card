@@ -10,10 +10,12 @@ struct CardCellViewModel {
     let image: UIImage?
     let frontText: String
     let typeText: String
+    let backText: String
     init(card: PostCard?) {
         image  = DataBaseManager.shared.loadImageFromDiskWith(fileName: card?.image ?? "")
-        frontText = card?.frontText ?? ""
-        typeText = PostCardStyle(rawValue: card?.type ?? "")?.title ?? PostCardStyle.regular.title
+        frontText = "Front Text: \( card?.frontText ?? "")"
+        backText = "Back Text: \(card?.backText ?? "")"
+        typeText = "Type: \(PostCardStyle(rawValue: card?.type ?? "")?.title ?? PostCardStyle.regular.title)"
     }
 }
 
@@ -22,7 +24,8 @@ class CardCellTableViewCell: UITableViewCell {
     @IBOutlet weak var cardImage: UIImageView!
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var frontLbel: UILabel!
-
+    @IBOutlet weak var backTextLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -32,5 +35,6 @@ class CardCellTableViewCell: UITableViewCell {
         cardImage.image = card.image
         typeLabel.text = card.typeText
         frontLbel.text = card.frontText
+        backTextLabel.text = card.backText
     }
 }

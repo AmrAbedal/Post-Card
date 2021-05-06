@@ -16,7 +16,7 @@ protocol ArchivesUseCase {
 class ArchivesUseCaseImplementation: ArchivesUseCase {
     func loadArchives() -> Single<Result<Results<PostCard> ,Error>> {
         do {
-            let archives = try DataBaseManager.shared.getPostCards()
+            let archives = try DataBaseManager.shared.getPostCards().sorted(byKeyPath: "date",ascending: false)
             return .just(.success(archives))
         } catch {
             return .just(.failure(error))
