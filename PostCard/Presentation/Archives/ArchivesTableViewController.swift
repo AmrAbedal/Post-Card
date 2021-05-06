@@ -9,10 +9,16 @@ import UIKit
 import RealmSwift
 import RxSwift
 
-class ArchivesTableViewController: UITableViewController {
+class ArchivesTableViewController: UIViewController {
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var styleSegment: UISegmentedControl!
     private let disposable = DisposeBag()
     private let viewModel: ArchivesViewModel
     private var archives: Results<PostCard>?
+    private var filteredArchives: Results<PostCard>? {
+        let title = viewModel.styles[styleSegment.selectedSegmentIndex].title
+        return archives?.filter(NSPredicate(format: "type = '\(title)'"))
+    }
     init(viewModel: ArchivesViewModel) {
         self.viewModel = viewModel
         super.init(nibName: "ArchivesTableViewController", bundle: nil)
@@ -23,18 +29,21 @@ class ArchivesTableViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        addSegmentedControll()
         registerCell()
         setupSubscribers()
         viewModel.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    private func addSegmentedControll() {
+        styleSegment.removeAllSegments()
+        for (index, style) in viewModel.styles.enumerated() {
+            styleSegment.insertSegment(withTitle: style.title, at: index, animated: true) }
+        styleSegment.selectedSegmentIndex = 0
     }
     private func registerCell() {
-        
+        tableView.rowHeight = 210
+        tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(UINib.init(nibName: CardCellTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: CardCellTableViewCell.nibName)
     }
     private func setupSubscribers() {
@@ -45,38 +54,33 @@ class ArchivesTableViewController: UITableViewController {
                 }
             }).disposed(by: disposable)
     }
+    @IBAction func segmentChanged(_ sender: UISegmentedControl) {
+        tableView.reloadData()
+    }
+    
     private func handleArchives(state: Result<Results<PostCard>, Error>) {
         switch state {
         case .success(let archives):
             self.archives = archives
             tableView.reloadData()
-        case .failure(let error): break
+        case .failure: break
             
         }
     }
-    // MARK: - Table view data source
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+}
+
+extension ArchivesTableViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return filteredArchives?.count ?? 0
     }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return archives?.count ?? 0
-    }
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 210
-    }
-    
-    
-     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier:CardCellTableViewCell.nibName, for: indexPath) as? CardCellTableViewCell else { return UITableViewCell() }
-        cell.configure(card:  CardCellViewModel.init(card: self.archives?[indexPath.row]))
-     
-     return cell
-     }
-     
-   
-    
+        cell.configure(card:  CardCellViewModel.init(card: self.filteredArchives?[indexPath.row]))
+        
+        return cell
+    }
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 210
+
+    }
 }

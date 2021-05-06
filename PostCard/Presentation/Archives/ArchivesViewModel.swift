@@ -10,13 +10,15 @@ import RxSwift
 import RealmSwift
 
 class ArchivesViewModel {
+    let styles: [PostCardStyle]
     private let diposeable = DisposeBag()
     var archivesSubject = BehaviorSubject<Result<Results<PostCard>,Error>?>(value: nil)
     private let usecase: ArchivesUseCase
     private let coordinator: ArchivesCoordinator
-    init(coordinator: ArchivesCoordinator, usecase: ArchivesUseCase) {
+    init(coordinator: ArchivesCoordinator, usecase: ArchivesUseCase, styles: [PostCardStyle]) {
         self.coordinator = coordinator
         self.usecase = usecase
+        self.styles = styles
     }
     func viewDidLoad() {
         usecase.loadArchives()

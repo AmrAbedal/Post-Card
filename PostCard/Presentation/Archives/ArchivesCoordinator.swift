@@ -14,7 +14,7 @@ class ArchivesCoordinator {
         self.navigationVontroller = navigationVontroller
     }
     func start() {
-        let viewModel = ArchivesViewModel.init(coordinator: self, usecase: ArchivesUseCaseImplementation())
+        let viewModel = ArchivesViewModel.init(coordinator: self, usecase: ArchivesUseCaseImplementation(), styles: [.foldable, .regular])
         let archivesVC = ArchivesTableViewController.init(viewModel: viewModel)
         self.navigationVontroller.pushViewController(archivesVC, animated: true)
     }
