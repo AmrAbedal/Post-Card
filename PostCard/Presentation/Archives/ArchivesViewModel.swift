@@ -29,5 +29,8 @@ class ArchivesViewModel {
             })
             .disposed(by: diposeable)
     }
+    func didSelectCard(card: PostCard) {
+        coordinator.showCardOption(card: card)
+    }
     
 }

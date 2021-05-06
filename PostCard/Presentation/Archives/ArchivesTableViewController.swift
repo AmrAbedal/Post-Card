@@ -83,4 +83,10 @@ extension ArchivesTableViewController: UITableViewDataSource, UITableViewDelegat
         return 210
 
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let card = filteredArchives?[indexPath.row]  else {
+            return
+        }
+        viewModel.didSelectCard(card: card)
+    }
 }
