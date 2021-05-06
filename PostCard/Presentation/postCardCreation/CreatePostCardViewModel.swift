@@ -31,12 +31,13 @@ class CreatePostCardViewModel {
 extension CreatePostCardViewModel: CreatePostCardDelegate {
     func saveButtonTapped() {
         // save to Realm
-        guard let frontText = frontText, let image = image else {
+        guard let frontText = frontText, let image = image, let style = style else {
             return
         }
         let card = PostCard.init()
         card.frontText = frontText
         card.backText = backText ?? ""
+        card.type = style.title
         usecase.saveCard(image: image, card: card).subscribe(onSuccess: {result in
             self.handleSaveStatus(status: result)
         }, onError: {error in
