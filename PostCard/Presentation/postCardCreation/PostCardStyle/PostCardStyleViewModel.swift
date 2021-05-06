@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum PostCardStyle {
+enum PostCardStyle: String {
     case regular, foldable
     var title: String {
         switch self {

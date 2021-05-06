@@ -9,11 +9,11 @@ import Foundation
 import RealmSwift
 
 class PostCard: Object {
-    @objc dynamic var _id: String = ""
+    @objc dynamic var _id: String = UUID().uuidString
     @objc dynamic var date = Date()
     @objc dynamic var frontText: String = ""
     @objc dynamic var backText: String = ""
-    var image: Data? = nil
+    var image: NSData? = nil
     @objc dynamic var type: String = ""
     
     override static func primaryKey() -> String? {

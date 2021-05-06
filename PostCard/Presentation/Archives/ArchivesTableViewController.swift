@@ -34,6 +34,7 @@ class ArchivesTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     private func registerCell() {
+        
         tableView.register(UINib.init(nibName: CardCellTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: CardCellTableViewCell.nibName)
     }
     private func setupSubscribers() {
@@ -64,11 +65,14 @@ class ArchivesTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return archives?.count ?? 0
     }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 400
+    }
     
     
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier:CardCellTableViewCell.nibName, for: indexPath) as? CardCellTableViewCell else { return UITableViewCell() }
-        cell.configure(card: self.archives?[indexPath.row].frontText ?? "")
+        cell.configure(card:  CardCellViewModel.init(card: self.archives?[indexPath.row]))
      
      return cell
      }

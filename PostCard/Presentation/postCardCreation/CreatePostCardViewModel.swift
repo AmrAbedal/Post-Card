@@ -30,13 +30,13 @@ class CreatePostCardViewModel {
 extension CreatePostCardViewModel: CreatePostCardDelegate {
     func saveButtonTapped() {
         // save to Realm
-        guard let frontText = frontText, let image = image, let data = image.jpegData(compressionQuality: 0.9) else {
+        guard let frontText = frontText, let image = image,let png = image.pngData() else {
             return
         }
         let card = PostCard.init()
         card.frontText = frontText
         card.backText = backText ?? ""
-        card.image = data
+        card.image = NSData(data: png )
         usecase.saveCard(card: card).subscribe(onSuccess: {result in
             self.handleSaveStatus(status: result)
         }, onError: {error in
